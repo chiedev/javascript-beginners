@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Creating Objects</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+<header>
+    <h1>Creating Objects</h1>
+</header>
+<pre>
+    <code>
+        const circle = {
+            radius: 1,
+            location: {
+                x: 1,
+                y: 1
+            },
+            draw: function () {
+                console.log('draw');
+            }
+        };
+
+        circle.draw()
+    </code>
+</pre>
+<h3>Members of the object:</h3>
+<ul>
+    <li><code class="tag">radius</code></li>
+    <li><code class="tag">location</code></li>
+    <li><code class="tag">draw</code></li>
+</ul>
+<p>If a member is a function, we refer to that as a <span class="label">method</span> (<code class="tag">draw</code><span class="label"> is a method</span>) then the other members are called <span class="label">properties</span>. </p>
+<hr>
+<q>In OOP, properties and methods are fundamentally different. </q>
+<q><span class="label">Property</span> is being used to hold values while a <span class="label">method</span> is being used for defining logics.</q>
+
+<hr>
+
+<div class="nav-prev">
+    Read Previous: <a href="/index.html">What is an OOP?</a>
+</div>
+<div class="nav-next">
+    Read Next: <a href="/pages/fundamentals/2_factories-constructors.html">Factories and Constructors</a>
+</div>
+
+<link rel="stylesheet" href="../../../node_modules/highlight/styles/railscasts.css">
+<script src="../../../node_modules/highlight/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>

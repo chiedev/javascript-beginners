@@ -1,0 +1,149 @@
+body {
+    margin: 2em;
+    font-family: Calibri;
+    color: #1f1f1f;
+    font-size: 1.5em;
+}
+h1 {
+    color: #125272;
+    margin-top: 2em;
+}
+h1::before {
+    content: '';
+    background: palevioletred;
+    padding: 5px 3px;
+    border-radius: 2px;
+    margin-right: 11px;
+}
+h2, h3, h4, h5, h6 {
+    color: #125272;
+    margin-top: 2em;
+    text-transform: uppercase;
+}
+hr {
+    background: #eaeaea;
+    margin: 2em 0;
+    border: none;
+    padding: 1px;
+}
+a {
+    color: palevioletred;
+    text-decoration: none;
+    font-style: italic;
+}
+span.label {
+    /* font-style: italic; */
+    font-weight: 600;
+}
+body > div {
+    margin: 2em;
+    max-width: 900px;
+}
+body div > div {
+    margin-left: 2em;
+}
+table {
+    width: 75%;
+    margin: auto;
+}
+table th {
+    width: 30%;
+}
+table, th, td {
+    border: 1px solid #1f1f1f;
+    border-collapse: collapse;
+    padding: 2em;
+    font-size: 90%;
+}
+code.tag {
+    background-color: #efefef;
+    font-size: calc(100% - 5px);
+    color: palevioletred;
+    padding: 2.5px 4px;
+    border-radius: 4px;
+    margin: 0 1px;
+    vertical-align: middle;
+    word-wrap: break-word
+}
+code { 
+    border-radius: 10px;
+}
+pre {
+    white-space: break-spaces;
+}
+ol {
+    list-style-type: upper-roman;
+}
+ol.number {
+    list-style-type: decimal;
+}
+ol li p {
+    font-weight: normal;
+}
+q {
+    quotes: "“" "”" "‘" "’";
+    display: block;
+    text-align: center;
+    padding: 1% 0;
+}
+q::before {
+    content: open-quote;
+    font-size: 400%;
+    color: #cccccc;
+    font-family: initial;
+    vertical-align: middle;
+    line-height: .5em;
+    padding-right: 10px;
+}
+q::after {
+    content: close-quote;
+    font-size: 400%;
+    color: #cccccc;
+    font-family: initial;
+    vertical-align: middle;
+    line-height: .5em;
+    padding-left: 10px;
+}
+.nav-prev {
+    float: left;
+    padding-bottom: 2em;
+}
+.nav-next {
+    float: right;
+    padding-bottom: 2em;
+}
+.center {
+    text-align: center; 
+    margin: auto;
+}
+button {
+    background-color: palevioletred;
+    font-size: .75em;
+    color: #efefef;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: none;
+}
+@media only screen and (max-width: 768px) {
+    q {
+        text-align: left;
+    }
+    q::before {
+        font-size: 200%;
+        padding-right: 7px;
+    }
+    q::after {
+        font-size: 200%;
+        padding-left: 7px;
+    }
+    .nav-prev {
+        float: unset;
+        padding: 0;
+        text-align: left;
+    }
+    .nav-next {
+        float: unset;
+        padding: 0;
+        text-align: left;
+    }   
+}
