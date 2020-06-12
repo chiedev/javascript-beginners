@@ -1,12 +1,13 @@
 body {
     margin: 2em;
     font-family: Calibri;
-    color: #1f1f1f;
+    color: #414141;
     font-size: 1.5em;
+    line-height: 1.5em;
 }
 h1 {
     color: #125272;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 h1::before {
     content: '';
@@ -32,28 +33,46 @@ a {
     font-style: italic;
 }
 span.label {
-    /* font-style: italic; */
     font-weight: 600;
 }
-body > div {
-    margin: 2em;
+span.silent {
+    color: #cccccc;
+}
+span.italic {
+    font-style: italic;
+}
+body > div ,
+header {
+    margin: 2em auto;
     max-width: 900px;
+}
+body > div.large {
+    max-width: 1080px;
 }
 body div > div {
     margin-left: 2em;
 }
 table {
     width: 75%;
-    margin: auto;
+}
+table.small {
+    max-width: 400px;
+}
+table tr:nth-child(even) {
+    background-color: #eaeaea;
 }
 table th {
     width: 30%;
+    color: #125272;
 }
 table, th, td {
-    border: 1px solid #1f1f1f;
+    border: 1px solid #cccccc;
     border-collapse: collapse;
     padding: 2em;
     font-size: 90%;
+}
+table.small, .small th, .small td {
+    padding: 1em;
 }
 code.tag {
     background-color: #efefef;
@@ -84,7 +103,9 @@ q {
     quotes: "“" "”" "‘" "’";
     display: block;
     text-align: center;
-    padding: 1% 0;
+    padding: 1em 0;
+    margin: 0;
+    color: #555555;
 }
 q::before {
     content: open-quote;
@@ -92,8 +113,9 @@ q::before {
     color: #cccccc;
     font-family: initial;
     vertical-align: middle;
-    line-height: .5em;
+    line-height: .75em;
     padding-right: 10px;
+    margin-left: -27px;
 }
 q::after {
     content: close-quote;
@@ -101,20 +123,37 @@ q::after {
     color: #cccccc;
     font-family: initial;
     vertical-align: middle;
-    line-height: .5em;
+    line-height: .75em;
     padding-left: 10px;
+}
+q + q {
+    margin-top: 1em;
 }
 .nav-prev {
     float: left;
     padding-bottom: 2em;
+    margin-left: 0;
+    color: #cccccc;
+}
+.nav-prev::before {
+    content: 'Previous: ';
 }
 .nav-next {
     float: right;
     padding-bottom: 2em;
+    margin-left: 0;
+    color: #cccccc;
+}
+.nav-next::before {
+    content: 'Next: ';
 }
 .center {
     text-align: center; 
     margin: auto;
+}
+.right {
+    text-align: right;
+    margin: unset;
 }
 button {
     background-color: palevioletred;
@@ -125,12 +164,19 @@ button {
     border: none;
 }
 @media only screen and (max-width: 768px) {
+    h1 {
+        margin-top: .75em;
+    }
+    table {
+        width: 100%;
+    }
     q {
         text-align: left;
     }
     q::before {
         font-size: 200%;
         padding-right: 7px;
+        margin-left: unset;
     }
     q::after {
         font-size: 200%;
@@ -140,10 +186,11 @@ button {
         float: unset;
         padding: 0;
         text-align: left;
+        padding-bottom: 1em;
     }
     .nav-next {
         float: unset;
         padding: 0;
         text-align: left;
-    }   
+    }
 }

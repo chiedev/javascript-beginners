@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Oriented Programming in Javascript</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header>
+        <span class="silent">⬅ Go back to:</span> <a href="../">Homepage</a>
+        <h1>Object-Oriented Programming in Javascript</h1>
+    </header>
+
+    <hr>
+
+    <div>
+        <h3>What is an OOP?</h3>
+        <p>It combines a group of related variables and functions into a unit.
+            We call that unit, an object.
+            <code class="tag">variables</code> referred as <code class="tag">properties</code>
+            while <code class="tag">functions</code> as <code class="tag">methods</code>.
+            It's a programming paradigm, a very popular style of programming.</p>
+        <hr>
+        <h3>What are the 4 Pillars of Object-Oritented Programming?</h3>
+        <ul>
+            <li><span class="label">Encapsulation</span>
+                <p>An object with group of variables and functions that are related to each other.</p>
+            </li>
+            <li><span class="label">Abstraction</span>
+                <p>Simpler Interface. Reduce the Impact of Change.</p>
+            </li>
+            <li><span class="label">Inheritance</span>
+                <p>It is a mechanism that allows you to eliminate redundant code.</p>
+            </li>
+            <li><span class="label">Polymorphism</span>
+                <p>"Poly" means many, "morphism" means form. It's a technique that allows you to get rid of long <code class="tag">if</code> and <code class="tag">else</code>,  <code class="tag">switch</code> and <code class="tag">case</code> statements.</p>
+                <p>We can implement a render method in each objects, then the render method will behave differently depending on the type of the object we are referencing.</p>
+            </li>
+        </ul>
+    
+        <hr>
+
+        <div>
+            <h3>What are the Benefits of OOP?</h3>
+            <ul>
+                <li><span class="label">Encapsulation</span>
+                    <p>We can reduce complexity and increase reusability.</p>
+                </li>
+                <li><span class="label">Abstraction</span>
+                    <p>We can hide the details and the complexity then show only the essentials. We can also isolate the impact of changes.</p>
+                </li>
+                <li><span class="label">Inheritance</span>
+                    <p>We can eliminate redundant code.</p>
+                </li>
+                <li><span class="label">Polymorphism</span>
+                    <p>We can refactor the ugly <code class="tag">switch</code> and <code class="tag">case</code> statements.</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <hr>
+    <div>
+        <h4>Procedural Code Sample:</h4>
+<pre>
+<code>
+    let baseSalary = 30_000;
+    let overtime = 10;
+    let rate = 20;
+
+    function getWage(baseSalary, overtime, rate) {
+        return baseSalary + (overtime * rate);
+    }
+
+</code>
+</pre>
+        <p>This kind of implementation is called <span class="label">procedural</span>. We have variables on one side and functions on the other side.</p>
+    </div>
+
+    <hr>
+
+    <div>
+        <h4>Object-Oriented Programming</h4>
+<pre>
+<code>
+    let employee = {
+        baseSalary: 30_000,
+        overtime: 10,
+        rate: 20,
+        getWage: function() {
+            return this.baseSalary + (this.overtime  this.rate);
+        }
+    };
+    employee.getWage();
+
+</code>
+</pre>
+        <p>The fewer the number of parameters, the easier it is to use and maintain that function.</p>
+    </div>
+
+    <hr>
+
+    <div class="center large">
+        <q>The best functions are those with no parameters! <span class="label">- Robert C Martin</span></q>
+    </div>
+    
+    <hr>
+
+    <div>
+        <div class="nav-prev">
+            <a href="../">What is Javascript?</a>
+        </div>
+        <div class="nav-next">
+            <a href="fundamentals/1_creating-objects.html">Creating Objects</a>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="../node_modules/highlight/styles/railscasts.css">
+    <script src="../node_modules/highlight/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+</html>

@@ -9,11 +9,16 @@
 </head>
 <body>
 <header>
+    <span class="silent">⬅ Go back to:</span> <a href="1_creating-objects.html">Creating Objects</a>
     <h1>Factories and Constructors</h1>
 </header>
-<h4>Factory Function</h4>
-<p>A factory function is any function which is not a class or constructor that returns a (presumably new) object. In JavaScript, any function can return an object. When it does so without the new keyword, it's a factory function.</p>
-<p>Here's an example of factory function code:</p>
+
+<hr>
+
+<div>
+    <h4>Factory Function</h4>
+    <p>A factory function is any function which is not a class or constructor that returns a (presumably new) object. In JavaScript, any function can return an object. When it does so without the new keyword, it's a factory function.</p>
+    <p>Here's an example of factory function code:</p>
 <pre>
     <code>
         // Factory Function
@@ -30,20 +35,21 @@
         circle.draw();
     </code>
 </pre>
+</div>
 
 <hr>
 
-<h4>Constructor Function</h4>
-<p>Constructor functions technically are regular functions. There are two conventions though:</p>
-<p>The regular <code class="tag">{...}</code> syntax allows to create one object. But often we need to create many similar objects, like multiple users or menu items and so on.</p>
-<p>That can be done using constructor functions and the <code class="tag">new</code> operator.</p>
-<ol class="number">
-    <li>They are named with capital letter first.</li>
-    <li>They should be executed only with <code class="tag">new</code> operator.</li>
-</ol>
+<div>
+    <h4>Constructor Function</h4>
+    <p>Constructor functions technically are regular functions. There are two conventions though:</p>
+    <p>The regular <code class="tag">{...}</code> syntax allows to create one object. But often we need to create many similar objects, like multiple users or menu items and so on.</p>
+    <p>That can be done using constructor functions and the <code class="tag">new</code> operator.</p>
+    <ol class="number">
+        <li>They are named with capital letter first.</li>
+        <li>They should be executed only with <code class="tag">new</code> operator.</li>
+    </ol>
 
-
-<p>For instance:</p>
+    <p>For instance:</p>
 <pre>
     <code>
         // Constructor Function
@@ -57,18 +63,18 @@
         const another = new Circle(1);
     </code>
 </pre>
-<!-- <hr> -->
-
-<!-- <q>Continuation 23:42</q> -->
+</div>
 
 <hr>
 
-<div class="nav-prev">
-    Read Previous: <a href="/pages/fundamentals/1_creating-objects.html">Creating Objects</a>
+<div>
+    <div class="nav-prev">
+        <a href="1_creating-objects.html">Creating Objects</a>
+    </div>
+    <div class="nav-next">
+        <a href="3_primitives-reference_types.html">Primitives and Reference Types</a>
+    </div>
 </div>
-<!-- <div class="nav-next">
-    Read Next: <a href="/pages/fundamentals/****.html">***</a>
-</div> -->
 
 <link rel="stylesheet" href="../../../node_modules/highlight/styles/railscasts.css">
 <script src="../../../node_modules/highlight/highlight.pack.js"></script>

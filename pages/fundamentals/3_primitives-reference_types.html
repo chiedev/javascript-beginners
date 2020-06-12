@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primitives and Reference Types</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+    
+
+<header>
+    <span class="silent">⬅ Go back to:</span> <a href="2_factories-constructors.html">Factories and Constructors</a>
+    <h1>Primitives and Reference Types</h1>
+    <p>These are the two value types in Javascript.</p>
+</header>
+<hr>
+<div>
+    <span class="label">Primitive Types</span>
+    <p>The size of a primitive value is fixed, therefore, JavaScript stores the primitive value on the stack.</p>
+
+    <span class="label">Referene Types</span>
+    <p>The size of a reference value is dynamic so JavaScript stores the reference value on the heap.</p>
+
+    <table class="small">
+        <thead>
+            <tr>
+                <th>Primitive Types</th>
+                <th>Reference Types</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Number</td>
+                <td>Object</td>
+            </tr>
+            <tr>
+                <td>String</td>
+                <td>Function</td>
+            <tr>
+                <td>Boolean</td>
+                <td>Array</td>
+            </tr>
+            <tr>
+                <td>Symbol</td>
+            </tr>
+            <tr>
+                <td><code class="tag">undefined</code></td>
+            </tr>
+            <tr>
+                <td><code class="tag">null</code></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<div>
+    <h3>Example #1</h3>
+    <p>At the given example below, <code class="tag">x</code> and <code class="tag">y</code> are <span class="italic">primitives</span>.</p>
+<pre>
+    <code>
+        let x = 10;
+        let y = x;
+
+        x = 20;
+    </code>
+</pre>
+    <p>This shows that <code class="tag">x</code> and <code class="tag">y</code> are completely two independent variables.</p>
+    <table class="small">
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="tag">x</code></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td><code class="tag">y</code></td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<div>
+    <h3>Example #2</h3>
+    <p>At the given example below, <code class="tag">x</code> is an object with property called <code class="tag">value</code>.</p>
+<pre>
+    <code>
+        let x = { value: 10 };
+        let y = x;
+
+        x.value = 20;
+    </code>
+</pre>
+    <p>An object is not stored in <code class="tag">x</code> variable. That object is stored somewhere else in the memory and the address of that memory location is stored inside <code class="tag">x</code> variable.</p>
+    <p>So then when you copy <code class="tag">x</code> into <code class="tag">y</code> variable, it's the address or the reference that is copied. In other words, both <code class="tag">x</code> and <code class="tag">y</code> are pointing on the same object in memory.
+    And when you modify that object using either <code class="tag">x</code> or <code class="tag">y</code> it changes the immediately visible to the other variable.</p>
+    <table class="small">
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="tag">x</code></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td><code class="tag">y</code></td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<div class="center large">
+    <h3>Conclusions</h3>
+    <q><span class="label">Primitives</span> are copied by their value while <span class="label">Reference</span> are copied by their reference.</q>
+</div>
+
+<hr>
+
+<div>
+    <div class="nav-prev">
+        <a href="2_factories-constructors.html">Factories and Constructors</a>
+    </div>
+    <div class="nav-next">
+        <a href="4_working-with-properties.html">Working with Properties</a>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../../../node_modules/highlight/styles/railscasts.css">
+<script src="../../../node_modules/highlight/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>
