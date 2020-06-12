@@ -10,7 +10,7 @@ Whether you're a beginner and want to learn to code, or you know any programming
 
 If you want to become a front-end developer, you have to learn JavaScript. It is the programming language that every front-end developer must know. 
 
-## Objecti-Oriented Programming in Javascript
+## Object-Oriented Programming in Javascript
 - [What is an OOP?](https://chiedev.github.io/javascript-beginners/pages/what-is-an-oop.html)
 - [Creating Objects](https://chiedev.github.io/javascript-beginners/pages/fundamentals/1_creating-objects.html)
 - [Factories and Constructors](https://chiedev.github.io/javascript-beginners/pages/fundamentals/2_factories-constructors.html)
