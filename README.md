@@ -11,10 +11,14 @@ Whether you're a beginner and want to learn to code, or you know any programming
 
 If you want to become a front-end developer, you have to learn JavaScript. It is the programming language that every front-end developer must know. 
 
+Go to >>> [Homepage](https://chiedev.github.io/javascript-beginners/) <<<
+
 ## Object-Oriented Programming in Javascript
 - [What is an OOP?](https://chiedev.github.io/javascript-beginners/pages/what-is-an-oop.html)
 - [Creating Objects](https://chiedev.github.io/javascript-beginners/pages/fundamentals/1_creating-objects.html)
 - [Factories and Constructors](https://chiedev.github.io/javascript-beginners/pages/fundamentals/2_factories-constructors.html)
 - [Primitives and Reference Types](https://chiedev.github.io/javascript-beginners/pages/fundamentals/3_primitives-reference_types.html)
-
-Go to >>> [Homepage](https://chiedev.github.io/javascript-beginners/) <<<
+- [Working with Properties](https://chiedev.github.io/javascript-beginners/pages/fundamentals/4_working-with-properties.html)
+- [Private Properties](https://chiedev.github.io/javascript-beginners/pages/fundamentals/5_private-properties.html)
+- [Getters and Setters](https://chiedev.github.io/javascript-beginners/pages/fundamentals/6_getters-setters.html)
+- [Exercise](https://chiedev.github.io/javascript-beginners/pages/exercise.html)
