@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Working with Properties</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+<header>
+    <span class="silent">⬅ Go back to:</span> <a href="3_primitives-reference_types.html">Primitives and Reference Types</a>
+    <h1>Working with Properties</h1>
+</header>
+
+<hr>
+
+<div>
+    <h3>Dot Notation</h3>
+    <div>
+        <p>When working with dot notation, property identifies can only be alphanumeric (and <code class="tag">_</code> and <code class="tag">$</code>). Properties can’t start with a number.</p>
+        <p>Dot notation is much easier to read than bracket notation and is therefor used more often.</p>
+        <span class="label">(ie.) 
+            <code class="tag">circle.location</code>, 
+            <code class="tag">circle.radius</code>, 
+            <code class="tag">circle.staticPropertyName</code>
+        </span>
+    </div>
+
+    <h3>Bracket Notation</h3>
+    <div>
+        <p>A second way to access properties on an object is called bracket notation.</p>
+        <p>When working with bracket notation, property identifiers only have to be a String. They can include any characters, including spaces. Variables may also be used as long as the variable resolves to a String.</p>
+        <p>This means there are fewer limitations when working with bracket notation. We can now have spaces in our strings, and can even start strings with numbers.</p>
+        <p>Perhaps most importantly, we can now use variables to access properties in an object. It’s important the variable you are using references a String.</p>
+        <span class="label">(ie.) 
+            <code class="tag">circle['location']</code>, 
+            <code class="tag">circle['center location']</code>, 
+            <code class="tag">circle['center-location']</code>, 
+            <code class="tag">circle[dynamicPropertyName]</code>
+        </span>
+        <p>If you have special characters or space on your property, you can use the bracket notation.</p>
+    </div>
+</div>
+
+<hr>
+
+<div>
+    <h3>Adding / Removing Properties</h3>
+<pre><code>
+    
+    function Circle(radius) {
+        this.radius = radius;
+        this.draw = function() {
+            console.log('draw');
+        }
+    }
+    const circle = new  Circle(10);
+
+    /**
+     * Adding property
+     */
+
+        // An example using dot notation
+        circle.location = { x: 1 };
+
+        // An example using bracket notation
+        const propertyName = 'center location';
+        cirle[propertyName] = { x: 1 };
+
+    /**
+     * Removing property
+     */
+
+        // An example using dot notation
+        delete circle.location;
+
+        // An example using bracket notation
+        delete circle['center location'];
+
+
+
+</code></pre>
+</div>
+
+<hr>
+
+<div>
+    <div class="nav-prev">
+        <a href="3_primitives-reference_types.html">Primitives and Reference Types</a>
+    </div>
+    <div class="nav-next">
+        <a href="5_private-properties.html">Private Properties</a>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../../../node_modules/highlight/styles/railscasts.css">
+<script src="../../../node_modules/highlight/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>

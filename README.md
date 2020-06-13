@@ -2,7 +2,8 @@
 This contains simple definitions and sample Javascript codes for beginners.
 
 Reference(s): [Programming with Mosh](https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA), 
-[JavaScript Tutorial](https://www.javascripttutorial.net/)
+[JavaScript Tutorial](https://www.javascripttutorial.net/), [JavaScript Info](https://javascript.info/), [Code Burst](https://codeburst.io/), [Medium](https://medium.com/)
+
 ## What is Javascript?
 JavaScript is one of the most popular programming languages in 2019. A lot of people are learning JavaScript to become front-end and/or back-end developers. 
 

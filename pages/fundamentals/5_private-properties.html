@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Private Properties</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+<header>
+    <span class="silent">⬅ Go back to:</span> <a href="4_working-with-properties.html">Working with Properties</a>
+    <h1>Private Properties</h1>
+    <p>One of the most important principles of object oriented programming – delimiting internal interface from the external one.</p>
+    <p>That is “a must” practice in developing anything more complex than a “hello world” app.</p>
+    <p>To understand this, let’s break away from development and turn our eyes into the real world.</p>
+    <p>Usually, devices that we’re using are quite complex. But delimiting the internal interface from the external one allows to use them without problems.</p>
+</header>
+
+<div>    
+    <hr>
+    <div>
+        <h3>Enumerating Properties</h3>
+        <ul>
+            <li>Using for in loop</li>
+            <li>Using Object.keys method</li>
+            <li>Using in operator</li>
+        </ul>
+        <h5>Using for in loop</h5>
+        <p>Sometimes you need to iterate over or enumerate the properties of an object. 
+            We can use the <code class="tag">for in</code> loop.
+        </p>
+<pre><code>
+    function Circle(radius) {
+        this.radius = radius;
+        this.draw = function() {
+            console.log('draw');
+        }
+    }
+    const circle = new  Circle(10);
+
+    /**
+     * Enumerate all the members in an object.
+     * Use "for in" loop.
+     */
+    for (let key in circle) {        
+        console.log(key); // access member's name
+
+        // access a member's value (property or method)
+        console.log(key, circle[key]); 
+
+        // access a member's value (property only)
+        if (typeof circle[key] !== 'function')
+            console.log(key, circle[key]);
+    } 
+
+</code></pre>
+        <p><span class="label">Output: </span></p>
+
+        <p>radius, draw</p>
+
+        <p>radius <code class="tag">10</code>, draw <code class="tag">function(){...}</code></p>
+
+        <p>radius <code class="tag">10</code></p>
+
+        <hr>
+
+        <h5>Using Object.keys method</h5>
+        <p>There is another approach to get the keys in an object. 
+            We can use the <code class="tag">Object.keys</code> method then pass our object in it.
+        </p>
+        <p>With this approach, we cannot separate properties from methods.</p>
+<pre><code>
+    function Circle(radius) {
+        this.radius = radius;
+        this.draw = function() {
+            console.log('draw');
+        }
+    }
+    const circle = new  Circle(10);
+    
+    /**
+     * Enumerate all the keys in an object.
+     * Use "Object.keys"
+     */
+        const keys = Object.keys(circle);
+        console.log(keys);
+
+</code></pre>
+        <p><span class="label">Output: </span>["radius", "draw"]</p>
+        
+        <hr>
+
+        <h5>Using in operator</h5>
+        <p>To check if an object has a given property, 
+            we can use the <code class="tag">in</code> operator.
+        </p>
+<pre><code>
+    function Circle(radius) {
+        this.radius = radius;
+        this.draw = function() {
+            console.log('draw');
+        }
+    }
+    const circle = new  Circle(10);
+  
+    /**
+     * To check the existence of a property of a method in an object.
+     * Use the "in" operator.
+     */
+        if ('radius' in circle)
+        console.log('Circle has a radius.');
+
+</code></pre>
+        <p><span class="label">Output: </span>Circle has a radius.</p>
+    </div>
+</div>
+
+<hr>
+
+<div>
+    <h3>Abstraction</h3>
+    <p>We can hide the details and the complexity then show only the essentials. We can also isolate the impact of changes.</p>
+    <div>
+        <span class="label">Example of an abstraction</span>
+        <p>The goal is to hide the method to consumers and expose the essentials only.</p>
+<pre><code>
+    function Circle(radius) {
+        this.radius = radius;
+        
+        // local variable or private property
+        let defaultLocation = { x: 0, y: 0 };
+
+        // local variable or private method
+        let computeOptimumLocation = function(factor) {
+            // ....
+        }
+
+        this.draw = function() {
+            computeOptimumLocation(0.1)
+            // this.radius - this is how you call members from this object.
+            // defaultLocation - this is how you call private members from this object.
+
+            console.log('draw');
+        }
+    }
+    const circle = new  Circle(10);
+
+</code></pre>
+        <p> In this example,
+            <code class="tag">defaultLocation</code> and 
+            <code class="tag">computeOptimumLocation</code> are not accessible to consumers.
+        </p>
+        <table class="large">
+            <thead>
+                <tr>
+                    <th>Name / Term</th>
+                    <th style="width: 70%">Definition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Scope</th>
+                    <td><p>It refers to the current context of code, 
+                        which determines the accessibility of variables to JavaScript. </p>
+                        <p>The two types of scope are local and global: 
+                        <span class="label">Global variables</span> are those declared outside of a block. 
+                        <span class="label">Local variables</span> are those declared inside of a block.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Closure</th>
+                    <td><p>In contrast to scope, we have "closure". 
+                        A closure determines what variables will be accessible to an inner function.
+                        An inner function can access local variables from itself and from its parent function.</p>
+                        <p>It's the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<hr>
+
+<div class="center large">
+    <h3>Conclusions</h3>
+    <q>To enumerate <span class="label">all the members</span> in an object, use <code class="tag">for in </code> loop. <br>
+        To enumerate <span class="label">all the keys</span> in an object, use <code class="tag">Object.keys </code> method. <br>
+        To check the <span class="label">existence of a property</span> of a method in an object, use the <code class="tag">in </code> operator.</q>
+    <q><span class="label">Scope</span> is temporary but <span class="label">Closure</span> stays there.</q>
+</div>
+
+<hr>
+
+<div>
+    <div class="nav-prev">
+        <a href="4_working-with-properties.html">Working with Properties</a>
+    </div>
+    <div class="nav-next">
+        <a href="6_getters-setters.html">Getters / Setters</a>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../../../node_modules/highlight/styles/railscasts.css">
+<script src="../../../node_modules/highlight/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>

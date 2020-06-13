@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise: Create a Stopwatch function</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header>
+    <span class="silent">⬅ Go back to:</span> <a href="fundamentals/6_getters-setters.html">Getters / Setters</a>
+    <h1>Exercise</h1>
+    <p>Create a <code class="tag">Stopwatch</code> function with <code class="tag">start</code>, <code class="tag">stop</code>, <code class="tag">reset</code> methods and <code class="tag">duration</code> property</code>.</p>
+    <p></p>
+    <table class="large">
+        <tbody>
+            <tr>
+                <th><span class="label"><code class="tag">Stopwatch</code> function</span></th>
+                <td>
+                    <p>The name of the function.</p>
+                </td>
+            </tr>
+            <tr>
+                <th><span class="label"><code class="tag">start</code> method</span></th>
+                <td>
+                    <p>It will allow the timer to start.</p>
+                    <p>Throw an error message if the someone attempts to call this method more than once.
+                            ie("Stopwatch has already started.")
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th><span class="label"><code class="tag">stop</code> method</span></th>
+                <td>
+                    <p>It will allow the timer to stop.</p>
+                    <p>Throw an error message if the someone attempts to call this method more than once.
+                        ie("Stopwatch is not started.")
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th><span class="label"><code class="tag">reset</code> method</span></th>
+                <td>
+                    <p>Allows you to reset the timer. </p>
+                    <p>Duration will become 0.</p>
+                </td>
+            </tr>
+            <tr>
+                <th><span class="label"><code class="tag">duration</code> property</span></th>
+                <td>
+                    <p>Shows the duration of the timer. </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</header>
+
+<div>
+    <button id="revealCodeTrigger" onclick="showHide()">Reveal Code</button>
+<pre id="revealCode"><code>
+
+    function Stopwatch () {
+
+        let startTime, endTime, running, duration = 0;
+    
+        this.start = function () {
+            if (running)
+                throw new Error('Stopwatch has already started.');
+    
+            running = true;
+    
+            startTime = new Date();
+            return 'Timer has started.'
+        };
+    
+        this.stop = function () {
+            if (!running)
+                throw new Error('Stopwatch is not started.');
+    
+            running = false;
+            
+            endTime = new Date();
+    
+            const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+            duration += seconds;
+            return 'Timer has stopped.'
+        };
+    
+        this.reset = function () {
+            startTime = null;
+            endTime = null;
+            running = false;
+            duration = 0;
+            return 'Timer was reset.'
+        };
+    
+        Object.defineProperty( this, 'duration', {
+            get: function () { return duration; }
+        });
+
+    }
+
+</code></pre>
+</div>
+
+<hr>
+
+<footer>
+    <span class="label left">References</span>
+    <ul>
+        <li>Object-oriented Programming in JavaScript: Made Super Simple | Mosh - <code class="tag">https://youtu.be/PFmuCDHHpwk</code></li>
+        <li>Factory Function - <code class="tag">https://medium.com/javascript-scene/javascript-factory-functions-with-es6-4d224591a8b1</code></li>
+        <li>Constructor Function - <code class="tag">https://javascript.info/constructor-new</code></li>
+        <li>JavaScript Primitive vs. Reference Values - <code class="tag">https://www.javascripttutorial.net/javascript-primitive-vs-reference-values</code></li>
+        <li>Dot Notation vs. Bracket Notation - <code class="tag">https://codeburst.io/javascript-quickie-dot-notation-vs-bracket-notation-333641c0f781</code></li>
+        <li>Private and Protected Properties - <code class="tag">https://javascript.info/private-protected-properties-methods</code></li>
+        <li>Property Getter and Setters - <code class="tag">https://javascript.info/property-accessors</code></li>
+        
+    </ul>
+</footer>
+
+<script>
+    function showHide() {
+    let container = document.getElementById('revealCode');
+    let btn = document.getElementById('revealCodeTrigger');
+        if (container.style.display === 'none') {
+            container.style.display = 'block';
+            btn.innerText = 'Hide Code';
+        } else {
+            container.style.display = 'none';
+            btn.innerText = 'Reveal Code';
+        }
+    }
+
+</script>
+
+<link rel="stylesheet" href="../../node_modules/highlight/styles/railscasts.css">
+<script src="../../node_modules/highlight/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

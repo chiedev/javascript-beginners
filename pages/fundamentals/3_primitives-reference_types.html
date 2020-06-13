@@ -20,7 +20,7 @@
     <span class="label">Primitive Types</span>
     <p>The size of a primitive value is fixed, therefore, JavaScript stores the primitive value on the stack.</p>
 
-    <span class="label">Referene Types</span>
+    <span class="label">Reference Types</span>
     <p>The size of a reference value is dynamic so JavaScript stores the reference value on the heap.</p>
 
     <table class="small">
@@ -87,6 +87,25 @@
             </tr>
         </tbody>
     </table>
+    
+    <hr>
+
+    <div>
+        <h5>Another example of Primitive Type value</h5>
+<pre>
+    <code>
+        let number = 10;
+        function increase (number) {
+            number++
+        }
+
+        increase(number);
+        console.log(number);
+    </code>
+</pre>
+        <p><span class="label">Output: </span> 10</p>
+    </div>
+
 </div>
 
 <hr>
@@ -123,6 +142,25 @@
             </tr>
         </tbody>
     </table>
+    
+    <hr>
+
+    <div>
+        <h5>Another example of Reference Type value</h5>
+<pre>
+    <code>
+        let obj = { value: 10 };
+        function increase (obj) {
+            obj.value++
+        }
+
+        increase(obj);
+        console.log(obj);
+    </code>
+</pre>
+        <p><span class="label">Output: </span> 11</p>
+    </div>
+
 </div>
 
 <hr>
@@ -137,6 +175,9 @@
 <div>
     <div class="nav-prev">
         <a href="2_factories-constructors.html">Factories and Constructors</a>
+    </div>
+    <div class="nav-next">
+        <a href="4_working-with-properties.html">Working with Properties</a>
     </div>
 </div>
 

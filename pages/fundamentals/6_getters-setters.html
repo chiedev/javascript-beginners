@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Getters / Setters</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+<header>
+    <span class="silent">⬅ Go back to:</span> <a href="5_private-properties.html">Private Properties</a>
+    <h1>Getters / Setters</h1>
+    <p>There are two kinds of object properties.
+    The first kind is data properties. We already know how to work with them. All properties that we’ve been using until now were data properties.
+    The second type of properties is something new. It’s accessor properties. They are essentially functions that execute on <span class="label">getting and setting a value</span>, but look like regular properties to an external code.</p>
+</header>
+
+<hr>
+
+<div>
+    <p><span class="label">Accessor properties</span> are represented by <span class="label">getter</span> and <span class="label">setter</span> methods. In an object literal they are denoted by <code class="tag">get</code> and <code class="tag">set</code>.</p>
+    <h5>Example of getter and setter.</h5>
+<pre><code>
+    function Circle(radius) {
+        
+        this.radius = radius;
+
+        let defaultLocation =  { x: 0, y: 0 };
+
+        this.getDefaultLocation = function() {
+           return defaultLocation;
+        } 
+
+        this.draw = function() {
+           console.log('draw');
+        }
+
+        Object.defineProperty(this, 'defaultLocation', {
+            // Getter
+            get: function() {
+               return defaultLocation; 
+            },
+            // Setter
+            set: function(value) {
+                if (!value.x || !value.y)
+                    throw new Error ('Invalid location.');
+
+                defaultLocation = value;
+            }
+        });
+    }
+
+    circle.draw();
+    circle.defaultLocation.x = 5;
+    console.log(circle.defaultLocation);
+    
+</code></pre>
+</div>
+
+<hr>
+
+<div>
+    <div class="nav-prev">
+        <a href="5_private-properties.html">Private Properties</a>
+    </div>
+    <div class="nav-next">
+        <a href="../exercise.html">Exercise</a>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../../../node_modules/highlight/styles/railscasts.css">
+<script src="../../../node_modules/highlight/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>
