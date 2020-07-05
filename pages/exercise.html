@@ -122,8 +122,10 @@
 </footer>
 
 <script>
-    function showHide() {
     let container = document.getElementById('revealCode');
+    container.style.display = 'none';
+    
+    function showHide() {
     let btn = document.getElementById('revealCodeTrigger');
         if (container.style.display === 'none') {
             container.style.display = 'block';
